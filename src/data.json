@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "event": "Finish coding feature at work",
+        "finished": true
+    },
+    {
+        "id":2,
+        "event": "Film content for partner at Tiffintech",
+        "finished": false
+    },
+    {
+        "id":3,
+        "event": "Edit short form Tiktok video",
+        "finished": true
+    },
+    {
+        "id":4,
+        "event": "Take dogs to groomer",
+        "finished": false
+    },
+    {
+        "id":5,
+        "event": "Meet with mentor",
+        "finished": false
+    },
+    {
+        "id":6,
+        "event": "Read book tonight",
+        "finished": false
+    }
+]
