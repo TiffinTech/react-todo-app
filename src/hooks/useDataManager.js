@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import fakeData from "../data.json";    // Just temporary dummy data
 
+/**
+ * Custom hook to manage our app data
+ */
 const useDataManager = () => {
     const [taskList, setTaskList] = useState([]); // The array of all fetched tasks - type: array of Task
     const [isLoading, setIsLoading] = useState(false); // Indicator, if data is currently loading
@@ -19,13 +22,15 @@ const useDataManager = () => {
             }
 
             loadDataFromApi(); // Execute the async function
-        } catch(err) {
+        } catch (err) {
+            // Handle the error case
             setTaskList([]);
             setLoadingError(err);
         } finally {
+            // Either successfull or with error, now we are done loading data :)
             setIsLoading(false);
         }
-        
+
     }, []);
 
     return {
