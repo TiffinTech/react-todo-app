@@ -8,7 +8,7 @@ const LOCAL_STORAGE_KEY = "tt-todo";
     }
 */
 
-const useUiManager = () => {
+const useConfigManager = () => {
     const [currentConfig, setCurrentConfig] = useState(null) // type: Config | null
 
     const setMode = (newMode) => { // type: "default" | "dark"
@@ -63,4 +63,4 @@ const useUiManager = () => {
     }
 }
 
-export default useUiManager;
+export default useConfigManager;
