@@ -1,20 +1,22 @@
-import React, {useState} from 'react';
-
+import React from 'react';
 import './App.css';
-import data from './data.json'
 
-//components
-import Header from './header';
-import TaskList from './TaskList';
+// components
+import Header from './components/Header/Header';
+import TaskList from './components/TaskList/TaskList';
+
+// hooks
+import useDataManager from './hooks/useDataManager';
 
 function App() {
-  const [ taskList, setTaskList ] = useState(data);
-  return (
-    <div className="App">
-      <Header/>
-      <TaskList taskList={taskList}/>
-    </div>
-  );
+    const {taskList} = useDataManager(); // Instantiating our data manager custom hook
+    
+    return (
+        <div className="App">
+            <Header />
+            <TaskList taskList={taskList} />
+        </div>
+    );
 }
 
 export default App;
