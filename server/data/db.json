@@ -1,0 +1,59 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "event": "Finish coding feature at work with json-server",
+      "finished": true
+    },
+    {
+      "id": 2,
+      "event": "Film content for partner at Tiffintech",
+      "finished": false
+    },
+    {
+      "id": 3,
+      "event": "Edit short form Tiktok video",
+      "finished": false
+    },
+    {
+      "id": 4,
+      "event": "Take dogs to groomer",
+      "finished": true
+    },
+    {
+      "id": 5,
+      "event": "Meet with mentor",
+      "finished": true
+    },
+    {
+      "id": 6,
+      "event": "Read book tonight",
+      "finished": false
+    },
+    {
+      "event": "Learn about the Golden Ratio",
+      "finished": false,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "event": "Shop at support your local farmers market",
+      "finished": true
+    },
+    {
+      "id": 9,
+      "event": "Learn calligraphy",
+      "finished": true
+    },
+    {
+      "id": 10,
+      "event": "Happy coding",
+      "finished": false
+    },
+    {
+      "id": 11,
+      "event": "Learn woodworking",
+      "finished": true
+    }
+  ]
+}
