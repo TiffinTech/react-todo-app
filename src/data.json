@@ -28,5 +28,10 @@
         "id":6,
         "event": "Read book tonight",
         "finished": false
+    },
+    {
+        "id":7,
+        "event": "Get a cat",
+        "finished": false
     }
 ]
