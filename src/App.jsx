@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import { useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -12,22 +11,20 @@ import useDataManager from './hooks/useDataManager';
 import useConfigManager from './hooks/useConfigManager';
 
 function App() {
-  const {taskList} = useDataManager(); // Instantiating our data manager custom hook
-  const {apiUrl} = useConfigManager();
+  const { taskList } = useDataManager(); // Instantiating our data manager custom hook
+  const { apiUrl } = useConfigManager();
   const [dataAPI, setData] = useState(null);
 
-  const fetchData = () => {
-    return fetch(`${apiUrl}/activity`)
+  // eslint-disable-next-line no-undef
+  const fetchData = () => fetch(`${apiUrl}/activity`)
     .then((response) => response.json())
-    .then((dataAPI) => {
-      setData([dataAPI])
-    })
-  }
+    .then(() => {
+      setData([dataAPI]);
+    });
 
- useEffect(() => {
-  fetchData()
- })
-
+  useEffect(() => {
+    fetchData();
+  });
 
   return (
     <div className="App">
@@ -35,8 +32,8 @@ function App() {
       <TaskList taskList={taskList} />
       <h1>THIS API IS CONTROLLING MY LIFE</h1>
 
-        {dataAPI &&
-          dataAPI.map(({ activity }) => (
+      {dataAPI
+          && dataAPI.map(({ activity }) => (
             <div key={activity}>
               <h3>{activity}</h3>
             </div>
