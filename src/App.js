@@ -9,13 +9,15 @@ import TaskList from './components/TaskList/TaskList';
 
 // hooks
 import useDataManager from './hooks/useDataManager';
+import useConfigManager from './hooks/useConfigManager';
 
 function App() {
   const {taskList} = useDataManager(); // Instantiating our data manager custom hook
+  const {apiUrl} = useConfigManager();
   const [dataAPI, setData] = useState(null);
 
   const fetchData = () => {
-    return fetch('https://www.boredapi.com/api/activity')
+    return fetch(`${apiUrl}/activity`)
     .then((response) => response.json())
     .then((dataAPI) => {
       setData([dataAPI])
@@ -24,7 +26,7 @@ function App() {
 
  useEffect(() => {
   fetchData()
- }, [])
+ })
 
 
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const LOCAL_STORAGE_KEY = "tt-todo";
+const LOCAL_STORAGE_KEY = process.env.REACT_APP_LOCAL_STORAGE_KEY;
 
 /*
     type Config = {
@@ -72,7 +72,8 @@ const useConfigManager = () => {
         currentConfig,
         setMode,
         toggleMode,
-        isDarkMode: () => currentConfig.theme === "dark"
+        isDarkMode: () => currentConfig.theme === "dark",
+        apiUrl: process.env.REACT_APP_API_URL
     }
 }
 
