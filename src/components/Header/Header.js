@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useConfigManager from '../../hooks/useConfigManager';
 import './styles.css';
 
 const Header = () => {
-    const { currentConfig, isDarkMode, toggleMode } = useConfigManager();   // Custom hook to manage app config
+    const { toggleMode } = useConfigManager();   // Custom hook to manage app config
 
     /**
      * Event handler for the theme button
@@ -13,13 +13,6 @@ const Header = () => {
     const onBtnModeClicked = () => {
         toggleMode(); // Toggles the mode and stores the new config
     }
-
-    // Debug only
-    useEffect(() => {
-        if (!currentConfig) return;
-
-        console.log(':: current mode is', isDarkMode(), currentConfig);
-    }, [isDarkMode, currentConfig]);
 
     return (
         <header className="header">
