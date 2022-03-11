@@ -3,7 +3,7 @@
     {
       "id": 1,
       "event": "Finish coding feature at work with json-server",
-      "finished": true
+      "finished": false
     },
     {
       "id": 2,
@@ -13,12 +13,12 @@
     {
       "id": 3,
       "event": "Edit short form Tiktok video",
-      "finished": false
+      "finished": true
     },
     {
       "id": 4,
       "event": "Take dogs to groomer",
-      "finished": true
+      "finished": false
     },
     {
       "id": 5,
@@ -28,12 +28,12 @@
     {
       "id": 6,
       "event": "Read book tonight",
-      "finished": false
+      "finished": true
     },
     {
+      "id": 7,
       "event": "Learn about the Golden Ratio",
-      "finished": false,
-      "id": 7
+      "finished": false
     },
     {
       "id": 8,
@@ -41,19 +41,9 @@
       "finished": true
     },
     {
-      "id": 9,
-      "event": "Learn calligraphy",
-      "finished": true
-    },
-    {
-      "id": 10,
-      "event": "Happy coding",
-      "finished": false
-    },
-    {
-      "id": 11,
-      "event": "Learn woodworking",
-      "finished": true
+      "event": "Create and follow a savings plan",
+      "finished": false,
+      "id": 9
     }
   ]
 }
