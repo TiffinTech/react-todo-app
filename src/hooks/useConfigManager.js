@@ -24,6 +24,14 @@ const useConfigManager = () => {
     }
 
     /**
+     * Updates the currently selected todo list filter  
+     * @param {number} newId
+     */
+    const updateSelectedFilterId = (newId) => { // type: number
+        setCurrentConfig({ ...currentConfig, selectedFilterId: newId });
+    }
+
+    /**
      * Toggles the UI mode between dark mode and default (light) mode
      */
     const toggleMode = () => {
@@ -40,11 +48,14 @@ const useConfigManager = () => {
         // Try getting former stored config
         if (!savedConfigTxt) {
             // nope, not found, so we save a default config
-            savedConfig = { theme: "dark" }
+            savedConfig = { theme: "dark", selectedFilterId: 1 }
             localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(savedConfig));
         }
         else {
             savedConfig = JSON.parse(savedConfigTxt);
+
+            // silent upgrade for config without newer props
+            !savedConfig.hasOwnProperty("selectedFilterId") && (savedConfig.selectedFilterId = 1);
         }
 
         // This setting triggers the text useEffect below
@@ -71,6 +82,7 @@ const useConfigManager = () => {
     return {
         currentConfig,
         setMode,
+        updateSelectedFilterId,
         toggleMode,
         isDarkMode: () => currentConfig.theme === "dark"
     }
