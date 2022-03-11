@@ -67,7 +67,7 @@ const useDataManager = () => {
             });
 
             // fetch doesn't throw an error, if it could connect but got an api error
-            if (res.status !== 200) {    // status 200 = OK
+            if (res.status !== 201) {    // status 201 = OK
                 throw new Error(res.statusText);
             }
 
