@@ -1,3 +1,40 @@
 .task {
-    /* start here styling :) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    border: 1px solid var(--fg-color);
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    margin: 0.4rem 0.4rem;
+}
+
+.task button {
+    visibility: hidden;
+}
+
+.task button svg {
+    stroke: var(--accent-color);
+}
+
+.task:hover button {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.task .task-content {
+    display: flex;
+}
+
+.task input {
+    margin-right: 0.8rem;
+}
+
+.task:hover {
+    color: var(--accent-color);
+}
+
+.task.done {
+    text-decoration: line-through;
 }

@@ -1,22 +1,119 @@
-/* BASIC THEMING */ 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --debug: 0px;
+}
 
 body {
-  --accent-color: rgb(235, 28, 71); /* from one of your shirts :) */
-  --bg-color: white;
-  --fg-color: #222;
-  
-  background-color: var(--bg-color);
-  color: var(--fg-color);
+    /* BASIC THEMING */
+    --header-height: 4rem;
+    --left-panel-width: 16rem;
+    --right-panel-width: 12rem;
+    --input-area-height: 4rem;
+
+    --accent-color: rgb(235, 28, 71);
+    --bg-btn-color-life: green;
+
+    --bg-color: white;
+    --fg-color: #222;
+    --bg-panel-left: #ddd;
+    --bg-panel-input: #eee;
+
+    background-color: var(--bg-color);
+    color: var(--fg-color);
 }
 
 body.dark {
-  --bg-color: #222;
-  --fg-color: #eee;
+    --bg-color: #222;
+    --fg-color: #eee;
+    --bg-panel-left: #000;
+    --bg-panel-input: #333;
 }
 
-.App {
-  text-align: center;
-  max-width: 960px;
-  margin: 0 auto;
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    position: relative;
 }
 
+.app .content-area {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100% - var(--input-area-height));
+}
+
+.app .header-area {
+    height: var(--header-height);
+
+    border: var(--debug) solid blue;
+}
+
+.app .leftPanel {
+    width: var(--left-panel-width);
+    background-color: var(--bg-panel-left);
+    padding: 1rem;
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+
+    border: var(--debug) solid orange;
+}
+
+.app .leftPanel.hidden {
+    width: 0;
+    transform: translateX(-100%);
+}
+
+.app .leftPanel.hidden > div {
+    visibility: hidden;
+}
+
+.app .contentPanel {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+
+    border: var(--debug) solid magenta;
+}
+
+.app .contentPanel .contentpanel-content {
+    height: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+
+    border: var(--debug) solid greenyellow;
+}
+
+.app .contentPanel .contentpanel-inputArea {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--bg-panel-input);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 1rem;
+    height: var(--input-area-height);
+
+    border: var(--debug) solid crimson;
+}
+
+.app .contentPanel .contentpanel-inputArea input {
+    flex: 2;
+    padding: 0.6rem 1rem;
+    font-size: medium;
+}
+
+.app .contentPanel .contentpanel-inputArea button {
+    padding: 0.6rem 1rem;
+    font-size: medium;
+    margin-right: 0.6rem;
+}

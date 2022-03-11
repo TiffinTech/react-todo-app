@@ -1,16 +1,30 @@
 .header {
     color: var(--accent-color);
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+}
+
+.header .left svg {
+    stroke: var(--fg-color);
+    margin-right: 1rem;
+    cursor: pointer;
 }
 
 .header .btn-theme {
     display: flex;
-    padding: .2rem;
+    padding: 0.2rem;
     border: 1px solid var(--accent-color);
-    border-radius: .2rem;
+    border-radius: 0.2rem;
     cursor: pointer;
 }
 

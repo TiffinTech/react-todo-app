@@ -1,0 +1,30 @@
+.loading-indicator {
+    --loading-indicator-size: 1rem;
+    width: var(--loading-indicator-size);
+    height: var(--loading-indicator-size);
+    margin: 0.4rem;
+}
+
+.loading-indicator.lds-dual-ring {
+    display: inline-block;
+}
+
+.loading-indicator.lds-dual-ring:after {
+    content: ' ';
+    display: block;
+    width: var(--loading-indicator-size);
+    height: var(--loading-indicator-size);
+    /* margin: 1rem; */
+    border-radius: 50%;
+    border: 2px solid var(--fg-color);
+    border-color: var(--fg-color) transparent var(--fg-color) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

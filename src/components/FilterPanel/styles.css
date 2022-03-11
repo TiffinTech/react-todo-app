@@ -1,0 +1,27 @@
+.filter-panel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0.4rem;
+}
+
+.filter-panel li {
+    padding: 0.4rem 0;
+    list-style-type: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter-panel li:hover {
+    color: var(--accent-color);
+}
+
+.filter-panel li span {
+    stroke: var(--fg-color);
+    margin-right: 0.6rem;
+}
+
+.filter-panel li.selected svg {
+    stroke: var(--accent-color);
+}
