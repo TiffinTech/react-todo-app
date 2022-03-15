@@ -1,0 +1,4 @@
+.panel-left {
+    background-color: var(--bg-left-panel);
+    border-right: 1px solid var(--border-left-panel);
+}

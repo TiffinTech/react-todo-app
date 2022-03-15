@@ -9,19 +9,29 @@
 }
 
 body {
+    margin: 0;
+
     /* BASIC THEMING */
-    --header-height: 4rem;
-    --left-panel-width: 16rem;
-    --right-panel-width: 12rem;
+    --header-height: 3.4rem;
+    --footer-height: 1.6rem;
+
+    --left-panel-width: 12rem;
+    --right-panel-width: 18rem;
     --input-area-height: 4rem;
 
     --accent-color: rgb(235, 28, 71);
+    --accent-hover-color: rgb(185, 21, 54);
     --bg-btn-color-life: green;
 
     --bg-color: white;
     --fg-color: #222;
-    --bg-panel-left: #ddd;
+    --bg-left-panel: #ddd;
+    --bg-right-panel: #eee;
     --bg-panel-input: #eee;
+    --border-header: #ccc;
+    --border-left-panel: #ccc;
+    --border-right-panel: #ccc;
+    --border-footer: #ccc;
 
     background-color: var(--bg-color);
     color: var(--fg-color);
@@ -30,90 +40,117 @@ body {
 body.dark {
     --bg-color: #222;
     --fg-color: #eee;
-    --bg-panel-left: #000;
+    --bg-left-panel: #222;
+    --bg-right-panel: #444;
     --bg-panel-input: #333;
+    --border-header: #333;
+    --border-left-panel: #333;
+    --border-right-panel: #333;
+    --border-footer: #333;
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-
-    position: relative;
+    min-height: 100vh;
 }
 
-.app .content-area {
-    display: flex;
-    flex-direction: row;
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-header);
     width: 100%;
-    height: calc(100% - var(--input-area-height));
-}
-
-.app .header-area {
     height: var(--header-height);
-
-    border: var(--debug) solid blue;
+    z-index: 10;
 }
 
-.app .leftPanel {
+.panel-left {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
     width: var(--left-panel-width);
-    background-color: var(--bg-panel-left);
-    padding: 1rem;
+    height: calc(100vh - var(--header-height) - var(--footer-height));
 
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-
-    border: var(--debug) solid orange;
+    transition: all 0.4s ease;
 }
 
-.app .leftPanel.hidden {
-    width: 0;
-    transform: translateX(-100%);
+.panel-right {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    width: var(--right-panel-width);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+
+    transition: all 0.4s ease;
 }
 
-.app .leftPanel.hidden > div {
-    visibility: hidden;
+.hide-left .panel-left {
+    margin-left: calc(-1 * var(--left-panel-width));
 }
 
-.app .contentPanel {
+.hide-right .panel-right {
+    margin-right: calc(-1 * var(--right-panel-width));
+}
+
+main {
     display: flex;
-    flex: 2;
     flex-direction: column;
+    /* justify-content: space-between; */
 
-    border: var(--debug) solid magenta;
+    margin-left: var(--left-panel-width);
+    transition: all 0.4s ease;
+    margin-right: var(--right-panel-width);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
-.app .contentPanel .contentpanel-content {
-    height: 100%;
+main .main-content {
     padding: 1rem;
     overflow-y: auto;
-
-    border: var(--debug) solid greenyellow;
+    flex: 1;
 }
 
-.app .contentPanel .contentpanel-inputArea {
+main .main-input {
     position: sticky;
     bottom: 0;
     background-color: var(--bg-panel-input);
+    border-top: 1px solid var(--border-footer);
+    padding-top: 0.6rem;
+    width: 100%;
 
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 
-    padding: 1rem;
+    /* padding: 1rem; */
     height: var(--input-area-height);
-
-    border: var(--debug) solid crimson;
 }
 
-.app .contentPanel .contentpanel-inputArea input {
+main .main-input input {
     flex: 2;
-    padding: 0.6rem 1rem;
+    padding: 0.3rem 1rem;
     font-size: medium;
+    margin-left: 0.6rem;
 }
 
-.app .contentPanel .contentpanel-inputArea button {
-    padding: 0.6rem 1rem;
+main .main-input button {
+    padding: 0.3rem 1rem;
     font-size: medium;
     margin-right: 0.6rem;
+}
+
+.hide-left main {
+    margin-left: 0;
+}
+
+.hide-right main {
+    margin-right: 0;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-footer);
+
+    width: 100%;
+    height: var(--footer-height);
 }

@@ -7,14 +7,14 @@ import Task from '../Task/Task';
  * 
  * @param {*} taskList The list of all current and filtered tasks 
  * @param {*} onUpdate Event handler to trigger a task item update 
- * @param {*} onDelete Event handler to trigger a task item delete 
+ * @param {*} onClick Event handler to forward the current task as selected 
  * @returns JSX-Content for the rendered task list
  */
-const TaskList = ({ taskList, onUpdate, onDelete }) => {
+const TaskList = ({ taskList, onUpdate, onClick }) => {
     return (
         <div className="task-list">
             {taskList.map((task, idx) => {
-                return <Task key={idx} task={task} onUpdate={onUpdate} onDelete={onDelete} />;
+                return <Task key={idx} task={task} onUpdate={onUpdate} onClick={onClick} />;
             })}
         </div>
     );

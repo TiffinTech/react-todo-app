@@ -1,5 +1,4 @@
 import React from 'react';
-import useConfigManager from '../../hooks/useConfigManager';
 import './styles.css';
 
 /**
@@ -8,12 +7,12 @@ import './styles.css';
  * @param {*} toggleLeftPanel Event handler to trigger the panel opening/closing  
  * @returns JSX-Content for the app header
  */
-const Header = ({ toggleLeftPanel }) => {
-    const { toggleMode } = useConfigManager();   // Custom hook to manage app config
+const Header = ({ toggleLeftPanel, toggleMode }) => {
+
 
     /**
      * Event handler for the theme button
-     * calls the toggleMode mthod from our 
+     * calls the toggleMode method from our 
      * custom hook 'useConfigManger'
      */
     const onBtnModeClicked = () => {

@@ -1,0 +1,116 @@
+.panel-right {
+    padding-top: 3rem;
+
+    background-color: var(--bg-right-panel);
+    border-left: 1px solid var(--border-right-panel);
+}
+
+.panel-right .container {
+    padding: 0.4rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.panel-right .container .close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    font-size: x-large;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.panel-right .ta-input {
+    background-color: var(--bg-right-panel);
+    color: var(--fg-color);
+
+    width: 100%;
+    height: 6rem;
+    padding: 0.4rem;
+}
+
+.panel-right .edit-area .ta-input:hover,
+.panel-right .edit-area .ta-input:focus {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+
+.panel-right .edit-area {
+    padding: 0 1rem;
+}
+
+.panel-right .edit-area label {
+    display: block;
+    padding-bottom: 0.2rem;
+    font-size: smaller;
+    font-weight: bolder;
+    color: var(--accent-color);
+}
+
+.panel-right .container .button-bar {
+    position: sticky;
+    bottom: 0;
+    border-top: 1px solid var(--border-right-panel);
+    height: 3rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.4rem 1rem;
+
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.2rem;
+}
+
+.panel-right .container .button-bar button {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+
+    border: 1px solid transparent;
+    padding: 0.3rem 1rem;
+    border-radius: 2px;
+    font-size: medium;
+
+    margin: 0 0.4rem;
+}
+
+.panel-right .container .button-bar button:hover {
+    border: 1px solid var(--fg-color);
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+
+.panel-right .container .button-bar button.del {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+}
+
+.panel-right .container .button-bar button.del:hover {
+    border: 1px solid var(--accent-hover-color);
+    background-color: var(--accent-color);
+    color: var(--fg-color);
+}
+
+.panel-right .container .button-bar button.cancel {
+    background-color: transparent;
+    border: 1px solid var(--fg-color);
+}
+
+.panel-right .container .button-bar button.cancel:hover {
+    border: 1px solid var(--bg-color);
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+
+.panel-right .container .button-bar button:disabled,
+.panel-right .container .button-bar button[disabled],
+.panel-right .container .button-bar button:disabled:hover,
+.panel-right .container .button-bar button[disabled]:hover {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}

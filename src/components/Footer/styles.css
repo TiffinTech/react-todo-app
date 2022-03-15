@@ -1,0 +1,20 @@
+footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: xx-small;
+
+    padding: 0.1rem 0.6rem;
+}
+
+footer .label {
+    padding: 0.1rem 0.4rem;
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+footer .label:first-child {
+    margin-left: 2rem;
+}
