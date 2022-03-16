@@ -6,6 +6,18 @@
 -   Added right panel for task editing
 -   Added footer area with statistics about number of all tasks, open tasks, done tasks and overdue tasks
 
+### Script Modifications
+
+The build process now builds directly into the `public` folder of the json-server.
+
+The standalone server can then be startet with `npm run start` in the folder `./server`.
+
+-   Build process modified:
+    -   `package.json` modified.
+        -   `"proxy": "http://localhost:4000"` added
+    -   added `package.json` with start script to the folder `./server`
+    -   File `.env` added to change the build folder to `./server/public`
+
 ## 2022-03-11
 
 ### New Features

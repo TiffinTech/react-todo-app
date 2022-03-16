@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 // import fakeData from "../data.json";    // Just temporary dummy data
 
-const API_BASE_URL = "http://localhost:4000/api";
+const API_BASE_URL = "/api"; // A proxy to http://localhost:4000 is configured in package.json
 
 /**
  * Custom hook to manage our app data
