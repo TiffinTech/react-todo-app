@@ -1,3 +1,11 @@
+## 2022-03-16
+
+### New Features
+
+-   Field 'duedate' added to the data structure
+-   Added right panel for task editing
+-   Added footer area with statistics about number of all tasks, open tasks, done tasks and overdue tasks
+
 ## 2022-03-11
 
 ### New Features
