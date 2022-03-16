@@ -8,7 +8,7 @@ import './styles.css';
  * @param {*} onClick Event handler to forward the current task as selected 
  * @returns JSX-Content for an single task item
  */
-const Task = ({ task, onUpdate, onClick }) => {
+const Task = ({ task, selectedTask, onUpdate, onClick }) => {
     const onTaskStatusChanged = () => {
         onUpdate({ ...task, finished: !task.finished })
     }
@@ -20,11 +20,25 @@ const Task = ({ task, onUpdate, onClick }) => {
         onClick(task);
     }
 
+    let dateStr = null;
+    let overdue = false;
+
+    if (task && task.duedate) {
+        const date = new Date(task.duedate);
+        overdue = date < new Date();
+        dateStr = date.toLocaleDateString();
+    }
+
+    const classStr = `line-two${overdue ? " overdue" : ""}`;
+
     return (
-        <div className={`task${task.finished ? " done" : ""}`} onClick={onItemClicked}>
+        <div className={`task${task.finished ? " done" : ""}${selectedTask?.id === task.id ? " selected" : ""}`} onClick={onItemClicked}>
             <div className='task-content'>
                 <input type="checkbox" checked={task.finished} onChange={onTaskStatusChanged} />
-                <div>{task.event}</div>
+                <div className="text">{task.event}
+                    {dateStr && <div className={classStr}>{dateStr}</div>}
+                </div>
+
             </div>
 
         </div>);

@@ -5,7 +5,7 @@ import './styles.css';
  * This panel manages the editing of a selected task
  * @returns
  */
-const PanelRight = ({ toggleRightPanel, selectedTask, onUpdate, onDelete }) => {
+const PanelRight = ({ toggleRightPanel, selectedTask, onUpdate, onDelete, isOpen }) => {
     const somethingChanged = useRef(false);
     const [taskCopy, setTaskCopy] = useState(null); // Our copy to edit
 
@@ -16,11 +16,28 @@ const PanelRight = ({ toggleRightPanel, selectedTask, onUpdate, onDelete }) => {
         somethingChanged.current = false; // Reset the changed marker
     }, [selectedTask]);
 
-    const onContentChanged = (evt) => {
+    const onContentChanged = (evt, field) => {
         if (!selectedTask) return; // not current item set
 
+        switch (field) {
+            case 'duedate': {
+                if (evt.target.value.length > 0) {
+                    const date = new Date(evt.target.value);
+                    setTaskCopy({ ...taskCopy, duedate: date.toISOString() });
+                } else {
+                    setTaskCopy({ ...taskCopy, duedate: null });
+                }
+                break;
+            }
+            case 'event': {
+                setTaskCopy({ ...taskCopy, event: evt.target.value });
+                break;
+            }
+            default: {
+            }
+        }
+
         !somethingChanged.current && (somethingChanged.current = true);
-        setTaskCopy({ ...taskCopy, event: evt.target.value });
     };
 
     const onCancelClicked = () => {
@@ -32,6 +49,12 @@ const PanelRight = ({ toggleRightPanel, selectedTask, onUpdate, onDelete }) => {
         onDelete(selectedTask);
     };
 
+    let dueDateVal = '';
+    if (taskCopy && taskCopy.duedate) {
+        // as value for the date input field, we need the format yyyy-mm-dd
+        dueDateVal = new Date(taskCopy.duedate).toISOString().slice(0, 10);
+    }
+
     return (
         <div className="panel-right">
             <div className="container">
@@ -39,15 +62,27 @@ const PanelRight = ({ toggleRightPanel, selectedTask, onUpdate, onDelete }) => {
                     ×
                 </div>
                 <div className="edit-area">
-                    <label>Todo</label>
-                    <textarea
-                        className="ta-input"
-                        value={taskCopy?.event || ''}
-                        onChange={onContentChanged}
-                    ></textarea>
+                    <div className="field">
+                        <label>Todo</label>
+                        <textarea
+                            className="ta-input"
+                            value={taskCopy?.event || ''}
+                            disabled={!selectedTask}
+                            onChange={(evt) => onContentChanged(evt, 'event')}
+                        ></textarea>
+                    </div>
+                    <div className="field">
+                        <label>Due Date</label>
+                        <input
+                            type="date"
+                            value={dueDateVal}
+                            disabled={!selectedTask}
+                            onChange={(evt) => onContentChanged(evt, 'duedate')}
+                        />
+                    </div>
                 </div>
                 <div className="button-bar">
-                    <button className="del" onClick={onDeleteClicked}>
+                    <button className="del" disabled={!selectedTask} onClick={onDeleteClicked}>
                         Delete
                     </button>
                     <button

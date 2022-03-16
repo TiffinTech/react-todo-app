@@ -2,12 +2,14 @@
   "todos": [
     {
       "id": 1,
-      "event": "Finish coding feature at work with json-server",
+      "event": "Finish coding feature at work",
+      "duedate": "2023-03-10T00:00:00.000Z",
       "finished": false
     },
     {
       "id": 2,
       "event": "Film content for partner at Tiffintech",
+      "duedate": "2022-07-06T00:00:00.000Z",
       "finished": false
     },
     {
@@ -18,21 +20,25 @@
     {
       "id": 4,
       "event": "Take dogs to groomer",
+      "duedate": "2022-05-10T23:00:00.000Z",
       "finished": false
     },
     {
       "id": 5,
-      "event": "Meet with mentor",
-      "finished": true
+      "event": "Happy coding :)",
+      "duedate": "2022-04-30T00:00:00.000Z",
+      "finished": false
     },
     {
       "id": 6,
       "event": "Read book tonight",
+      "duedate": "2022-03-01T00:00:00.000Z",
       "finished": true
     },
     {
       "id": 7,
       "event": "Learn about the Golden Ratio",
+      "duedate": "2022-02-17T00:00:00.000Z",
       "finished": false
     },
     {
@@ -44,6 +50,11 @@
       "event": "Create and follow a savings plan",
       "finished": false,
       "id": 9
+    },
+    {
+      "event": "Study a foreign language",
+      "finished": false,
+      "id": 10
     }
   ]
 }

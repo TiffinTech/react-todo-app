@@ -89,13 +89,14 @@ const useDataManager = () => {
      * Updates an existing task in the database
      * @param {*} The task object to be updated 
      */
-    const updateTask = async ({ id, event, finished }) => {
+    const updateTask = async ({ id, event, duedate = null, finished }) => {
         setIsLoading(true);
 
         // Prepare the record for updating
         const record = {
             id,
             event,
+            duedate,
             finished
         };
 

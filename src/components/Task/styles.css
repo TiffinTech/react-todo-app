@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.task.selected {
+    border: 1px solid var(--accent-color);
+}
+
 .task button {
     visibility: hidden;
 }
@@ -27,6 +31,7 @@
 
 .task .task-content {
     display: flex;
+    align-items: center;
 }
 
 .task input {
@@ -39,4 +44,21 @@
 
 .task.done {
     text-decoration: line-through;
+}
+
+.task-content .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2.2rem;
+}
+
+.task .line-two {
+    font-size: small;
+    height: 1rem;
+    color: var(--fg-secondary-color);
+}
+
+.task .line-two.overdue {
+    color: var(--accent-color);
 }

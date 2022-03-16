@@ -10,11 +10,11 @@ import Task from '../Task/Task';
  * @param {*} onClick Event handler to forward the current task as selected 
  * @returns JSX-Content for the rendered task list
  */
-const TaskList = ({ taskList, onUpdate, onClick }) => {
+const TaskList = ({ taskList, selectedTask, onUpdate, onClick }) => {
     return (
         <div className="task-list">
             {taskList.map((task, idx) => {
-                return <Task key={idx} task={task} onUpdate={onUpdate} onClick={onClick} />;
+                return <Task key={idx} task={task} selectedTask={selectedTask} onUpdate={onUpdate} onClick={onClick} />;
             })}
         </div>
     );

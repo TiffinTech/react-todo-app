@@ -25,6 +25,7 @@ body {
 
     --bg-color: white;
     --fg-color: #222;
+    --fg-secondary-color: #555;
     --bg-left-panel: #ddd;
     --bg-right-panel: #eee;
     --bg-panel-input: #eee;
@@ -40,6 +41,7 @@ body {
 body.dark {
     --bg-color: #222;
     --fg-color: #eee;
+    --fg-secondary-color: #ccc;
     --bg-left-panel: #222;
     --bg-right-panel: #444;
     --bg-panel-input: #333;

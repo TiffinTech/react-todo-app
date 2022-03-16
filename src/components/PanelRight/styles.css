@@ -33,8 +33,8 @@
     padding: 0.4rem;
 }
 
-.panel-right .edit-area .ta-input:hover,
-.panel-right .edit-area .ta-input:focus {
+.panel-right .edit-area .ta-input:hover:not([disabled]),
+.panel-right .edit-area .ta-input:focus:not([disabled]) {
     background-color: var(--fg-color);
     color: var(--bg-color);
 }
@@ -113,4 +113,8 @@
     border: 1px solid #999999;
     background-color: #cccccc;
     color: #666666;
+}
+
+.panel-right .field:not(last-child) {
+    margin-bottom: 1.2rem;
 }

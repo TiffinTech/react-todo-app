@@ -85,8 +85,8 @@ function App() {
    * @param {*} newFilterId index of the selected filter item
    */
   const onFilterSelectionChanged = (newFilterId) => {
-    // setSelectedFilterIndex(newFilterId);
     updateSelectedFilterId(newFilterId);
+    setSelectedTask(null);  // reset currently selected task
   }
 
   /**
@@ -152,7 +152,7 @@ function App() {
 
       <main>
         <div className="main-content">
-          <TaskList taskList={filteredTaskList} onUpdate={updateTask} onClick={onTaskItemClicked} />
+          <TaskList taskList={filteredTaskList} selectedTask={selectedTask} onUpdate={updateTask} onClick={onTaskItemClicked} />
         </div>
 
         <div className="main-input">
@@ -165,7 +165,12 @@ function App() {
         </div>
       </main>
 
-      <PanelRight toggleRightPanel={toggleRightPanel} selectedTask={selectedTask} onUpdate={onUpdateTodoClicked} onDelete={onItemDeleted} />
+      {rightPanelVisible && <PanelRight
+        toggleRightPanel={toggleRightPanel}
+        selectedTask={selectedTask}
+        onUpdate={onUpdateTodoClicked}
+        onDelete={onItemDeleted}
+        isOpen={rightPanelVisible} />}
 
       <Footer taskList={taskList}></Footer>
     </div >
