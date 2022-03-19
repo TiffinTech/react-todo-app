@@ -1,13 +1,10 @@
 .panel-right {
     padding-top: 3rem;
-
     background-color: var(--bg-right-panel);
     border-left: 1px solid var(--border-right-panel);
 }
 
 .panel-right .container {
-    padding: 0.4rem 0;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,7 +16,6 @@
     top: 0.4rem;
     right: 0.4rem;
     font-size: x-large;
-
     cursor: pointer;
     user-select: none;
 }
@@ -27,7 +23,6 @@
 .panel-right .ta-input {
     background-color: var(--bg-right-panel);
     color: var(--fg-color);
-
     width: 100%;
     height: 6rem;
     padding: 0.4rem;
@@ -55,26 +50,20 @@
     position: sticky;
     bottom: 0;
     border-top: 1px solid var(--border-right-panel);
-    height: 3rem;
-
+    height: var(--input-area-height);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 0.4rem 1rem;
-
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.2rem;
 }
 
 .panel-right .container .button-bar button {
     background-color: var(--bg-color);
     color: var(--fg-color);
-
     border: 1px solid transparent;
     padding: 0.3rem 1rem;
     border-radius: 2px;
     font-size: medium;
-
     margin: 0 0.4rem;
 }
 

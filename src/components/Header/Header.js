@@ -1,28 +1,34 @@
-import React from 'react';
 import './styles.css';
+import React from 'react';
 
+import { useAtom } from 'jotai';
+import { currentThemeAtom, leftPanelVisibleAtom } from '../../atoms/atoms';
 /**
  * Renders the app header
  * Contains the button to trigger the side panel opening and closing
  * @param {*} toggleLeftPanel Event handler to trigger the panel opening/closing  
  * @returns JSX-Content for the app header
  */
-const Header = ({ toggleLeftPanel, toggleMode }) => {
-
+const Header = () => {
+    const [leftPanelVisible, setLeftPanelVisible] = useAtom(leftPanelVisibleAtom);
+    const [currentTheme, setCurrentTheme] = useAtom(currentThemeAtom);
 
     /**
-     * Event handler for the theme button
-     * calls the toggleMode method from our 
-     * custom hook 'useConfigManger'
+     * Event handler for the theme button.
+     * Sets the new theme in the currentTheme atom
      */
     const onBtnModeClicked = () => {
-        toggleMode(); // Toggles the mode and stores the new config
+        setCurrentTheme(currentTheme === "default" ? "dark" : "default");
+    }
+
+    const onBtnMenuToggleClicked = () => {
+        setLeftPanelVisible(!leftPanelVisible);
     }
 
     return (
         <header className="header">
             <div className="left">
-                <svg onClick={toggleLeftPanel}
+                <svg onClick={onBtnMenuToggleClicked}
                     xmlns="http://www.w3.org/2000/svg"
                     width="16" height="16"
                     viewBox="0 0 24 24"

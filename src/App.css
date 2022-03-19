@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --debug: 0px;
-}
-
 body {
     margin: 0;
 
@@ -17,7 +13,7 @@ body {
 
     --left-panel-width: 12rem;
     --right-panel-width: 18rem;
-    --input-area-height: 4rem;
+    --input-area-height: 3rem;
 
     --accent-color: rgb(235, 28, 71);
     --accent-hover-color: rgb(185, 21, 54);
@@ -26,6 +22,7 @@ body {
     --bg-color: white;
     --fg-color: #222;
     --fg-secondary-color: #555;
+    --bg-secondary-color: #bbb;
     --bg-left-panel: #ddd;
     --bg-right-panel: #eee;
     --bg-panel-input: #eee;
@@ -33,6 +30,7 @@ body {
     --border-left-panel: #ccc;
     --border-right-panel: #ccc;
     --border-footer: #ccc;
+    --border-modal: #eee;
 
     background-color: var(--bg-color);
     color: var(--fg-color);
@@ -42,6 +40,7 @@ body.dark {
     --bg-color: #222;
     --fg-color: #eee;
     --fg-secondary-color: #ccc;
+    --bg-secondary-color: #555;
     --bg-left-panel: #222;
     --bg-right-panel: #444;
     --bg-panel-input: #333;
@@ -49,6 +48,7 @@ body.dark {
     --border-left-panel: #333;
     --border-right-panel: #333;
     --border-footer: #333;
+    --border-modal: #666;
 }
 
 .app {
@@ -96,12 +96,11 @@ body.dark {
 main {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-
     margin-left: var(--left-panel-width);
-    transition: all 0.4s ease;
     margin-right: var(--right-panel-width);
     height: calc(100vh - var(--header-height) - var(--footer-height));
+
+    transition: all 0.4s ease;
 }
 
 main .main-content {
@@ -113,17 +112,13 @@ main .main-content {
 main .main-input {
     position: sticky;
     bottom: 0;
-    background-color: var(--bg-panel-input);
-    border-top: 1px solid var(--border-footer);
-    padding-top: 0.6rem;
-    width: 100%;
-
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
-
-    /* padding: 1rem; */
+    align-items: center;
+    width: 100%;
     height: var(--input-area-height);
+    background-color: var(--bg-panel-input);
+    border-top: 1px solid var(--border-footer);
 }
 
 main .main-input input {
@@ -134,7 +129,7 @@ main .main-input input {
 }
 
 main .main-input button {
-    padding: 0.3rem 1rem;
+    padding: 0.3rem 0.4rem;
     font-size: medium;
     margin-right: 0.6rem;
 }
@@ -149,10 +144,9 @@ main .main-input button {
 
 footer {
     position: sticky;
+    width: 100%;
+    height: var(--footer-height);
     bottom: 0;
     background-color: var(--bg-color);
     border-top: 1px solid var(--border-footer);
-
-    width: 100%;
-    height: var(--footer-height);
 }

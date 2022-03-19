@@ -1,13 +1,17 @@
+import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
+import { taskListAtom } from "../atoms/atoms";
 // import fakeData from "../data.json";    // Just temporary dummy data
 
-const API_BASE_URL = "/api"; // A proxy to http://localhost:4000 is configured in package.json
+// During development we access the json-server via a proxy
+// to http://localhost:4000. The proxy is configured in package.json
+const API_BASE_URL = "/api";
 
 /**
  * Custom hook to manage our app data
  */
 const useDataManager = () => {
-    const [taskList, setTaskList] = useState([]); // The array of all fetched tasks - type: array of Task
+    const [taskList, setTaskList] = useAtom(taskListAtom); // The array of all fetched tasks - type: array of Task
     const [isLoading, setIsLoading] = useState(false); // Indicator, if data is currently loading
     const [loadingError, setLoadingError] = useState(null); // contains the error from data loading - type Error | null
 
@@ -41,7 +45,7 @@ const useDataManager = () => {
             // Either successfull or with error, now we are done loading data :)
             setIsLoading(false);
         }
-    }, []);
+    }, [setTaskList]);
 
     /**
      * Adds a new task object to the database

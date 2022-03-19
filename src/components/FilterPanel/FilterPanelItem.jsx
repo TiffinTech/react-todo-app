@@ -1,16 +1,39 @@
-/**
- *
- * @param {*} item the todo item to render
- * @param {*} index the current item's index
- * @param {*} selected the currently selected menu item
- * @param {*} onChange event handler for menu selection
- * @returns JSX-Content for a single menu panel item
- */
-const FilterPanelItem = ({ item, index, selected, onChange }) => {
+import { useAtom } from 'jotai';
+import {
+    selectedFilterIndexAtom,
+    selectedTaskAtom,
+    inEditModeAtom,
+    theModalAtom,
+} from '../../atoms/atoms';
+
+const FilterPanelItem = ({ item, index }) => {
+    const [isInEditMode] = useAtom(inEditModeAtom);
+    const [theModal] = useAtom(theModalAtom);
+    const [selectedFilterIndex, setSelectedFilterIndex] = useAtom(selectedFilterIndexAtom);
+    const [, setSelectedTask] = useAtom(selectedTaskAtom);
+
+    /**
+     * Event handler for the selection of another filter item
+     */
+    const onFilterSelectionChanged = () => {
+        if (isInEditMode) {
+            theModal.current.showModal({
+                title: 'Information',
+                content: 'You are currently in edit mode. Please finish editing first.',
+                textOK: 'OK',
+                showCancel: false,
+                showOK: true,
+            });
+        } else {
+            setSelectedFilterIndex(index);
+            setSelectedTask(null); // reset currently selected task
+        }
+    };
+
     return (
         <li
-            className={`${selected === index ? 'selected' : ''}`}
-            onClick={() => onChange(index)}
+            className={`${selectedFilterIndex === index ? 'selected' : ''}`}
+            onClick={onFilterSelectionChanged}
         >
             <span>{item.svg}</span>
             {item.text}

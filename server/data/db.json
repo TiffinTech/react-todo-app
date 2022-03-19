@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": 1,
-      "event": "Finish coding feature at work",
+      "event": "Finish coding feature at work...",
       "duedate": "2023-03-10T00:00:00.000Z",
       "finished": false
     },
@@ -19,8 +19,8 @@
     },
     {
       "id": 4,
-      "event": "Take dogs to groomer",
-      "duedate": "2022-05-10T23:00:00.000Z",
+      "event": "Take dogs to groomer :o)",
+      "duedate": "2022-06-10T00:00:00.000Z",
       "finished": false
     },
     {
@@ -33,7 +33,7 @@
       "id": 6,
       "event": "Read book tonight",
       "duedate": "2022-03-01T00:00:00.000Z",
-      "finished": true
+      "finished": false
     },
     {
       "id": 7,
@@ -55,6 +55,22 @@
       "event": "Study a foreign language",
       "finished": false,
       "id": 10
+    },
+    {
+      "event": "Play basketball with a group of friends",
+      "finished": false,
+      "id": 12
+    },
+    {
+      "id": 13,
+      "event": "Learn Javascript!!!",
+      "duedate": "2022-03-18T00:00:00.000Z",
+      "finished": false
+    },
+    {
+      "event": "Bake a pie with some friends",
+      "finished": false,
+      "id": 15
     }
   ]
 }

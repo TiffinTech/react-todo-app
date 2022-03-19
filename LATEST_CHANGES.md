@@ -1,3 +1,10 @@
+## 2022-03-19
+
+### New Features
+
+-   Added [Jotai](https://jotai.org/) - atomic state management for React
+-   Added a modal dialog component
+
 ## 2022-03-16
 
 ### New Features
