@@ -1,4 +1,4 @@
-import './styles.css';
+import CSS from './FilterPanel.module.css';
 import FilterPanelItem from './FilterPanelItem';
 
 // Preparing the static menu for the left panel
@@ -82,7 +82,7 @@ const menuItems = [
 
 const FilterPanel = () => {
     return (
-        <div className="filter-panel">
+        <div className={CSS.filterPanel}>
             <ul>
                 {menuItems.map((item, idx) => (
                     <FilterPanelItem key={idx} item={item} index={idx} />

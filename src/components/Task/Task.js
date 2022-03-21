@@ -1,4 +1,4 @@
-import './styles.css';
+import CSS from './Task.module.css';
 import React from 'react';
 import { useAtom } from 'jotai';
 import { selectedTaskAtom, rightPanelVisibleAtom, inEditModeAtom, theModalAtom } from '../../atoms/atoms';
@@ -23,7 +23,7 @@ const Task = ({ task }) => {
     const [selectedTask, setSelectedTask] = useAtom(selectedTaskAtom);
     const [isInEditMode] = useAtom(inEditModeAtom);
     const [theModal] = useAtom(theModalAtom);
-    const [, setRightPanelVisible] = useAtom(rightPanelVisibleAtom);
+    const [isRightPanelVisible, setRightPanelVisible] = useAtom(rightPanelVisibleAtom);
 
     /**
     * Updates a task, triggered by the right (edit) panel
@@ -40,9 +40,9 @@ const Task = ({ task }) => {
 
     const onItemClicked = async (evt) => {
         if (evt.target.tagName === "INPUT") return; // We don't care about the input element
-        if (selectedTask && (selectedTask.id === task.id)) return; // If we are the selected task, we just skip the click
+        if (selectedTask && (selectedTask.id === task.id) && isRightPanelVisible) return; // If we are the selected task, we just skip the click
 
-        if (isInEditMode) {
+        if (isInEditMode && (selectedTask.id !== task.id)) {
             const choice = await theModal.current.showModal({
                 title: 'Cancel Editing Process',
                 content: 'Do you really want to cancel editing the record?',
@@ -67,13 +67,13 @@ const Task = ({ task }) => {
         dateStr = date.toLocaleDateString();
     }
 
-    const classStr = `line-two${overdue ? " overdue" : ""}`;
+    const classStr = `${CSS.lineTwo} ${overdue ? CSS.overdue : ""}`;
 
     return (
-        <div className={`task${task.finished ? " done" : ""}${selectedTask?.id === task.id ? " selected" : ""}`} onClick={onItemClicked}>
-            <div className='task-content'>
+        <div className={`${CSS.task} ${task.finished ? CSS.done : ""} ${selectedTask?.id === task.id ? CSS.selected : ""}`} onClick={onItemClicked}>
+            <div className={CSS.taskContent}>
                 <input type="checkbox" checked={task.finished} onChange={onTaskStatusChanged} />
-                <div className="text">{task.event}
+                <div className={CSS.text}>{task.event}
                     {dateStr && <div className={classStr}>{dateStr}</div>}
                 </div>
             </div>

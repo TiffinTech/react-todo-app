@@ -1,17 +1,24 @@
-.panel-right {
+.panelRight {
     padding-top: 3rem;
     background-color: var(--bg-right-panel);
     border-left: 1px solid var(--border-right-panel);
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    width: var(--right-panel-width);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+
+    transition: all 0.4s ease;
 }
 
-.panel-right .container {
+.panelRight .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
 
-.panel-right .container .close {
+.panelRight .container .close {
     position: absolute;
     top: 0.4rem;
     right: 0.4rem;
@@ -20,7 +27,7 @@
     user-select: none;
 }
 
-.panel-right .ta-input {
+.panelRight .taInput {
     background-color: var(--bg-right-panel);
     color: var(--fg-color);
     width: 100%;
@@ -28,17 +35,17 @@
     padding: 0.4rem;
 }
 
-.panel-right .edit-area .ta-input:hover:not([disabled]),
-.panel-right .edit-area .ta-input:focus:not([disabled]) {
+.panelRight .editArea .taInput:hover:not([disabled]),
+.panelRight .editArea .taInput:focus:not([disabled]) {
     background-color: var(--fg-color);
     color: var(--bg-color);
 }
 
-.panel-right .edit-area {
+.panelRight .editArea {
     padding: 0 1rem;
 }
 
-.panel-right .edit-area label {
+.panelRight .editArea label {
     display: block;
     padding-bottom: 0.2rem;
     font-size: smaller;
@@ -46,7 +53,7 @@
     color: var(--accent-color);
 }
 
-.panel-right .container .button-bar {
+.panelRight .container .buttonBar {
     position: sticky;
     bottom: 0;
     border-top: 1px solid var(--border-right-panel);
@@ -57,7 +64,7 @@
     padding: 0.4rem 1rem;
 }
 
-.panel-right .container .button-bar button {
+.panelRight .container .buttonBar button {
     background-color: var(--bg-color);
     color: var(--fg-color);
     border: 1px solid transparent;
@@ -67,43 +74,43 @@
     margin: 0 0.4rem;
 }
 
-.panel-right .container .button-bar button:hover {
+.panelRight .container .buttonBar button:hover {
     border: 1px solid var(--fg-color);
     background-color: var(--fg-color);
     color: var(--bg-color);
 }
 
-.panel-right .container .button-bar button.del {
+.panelRight .container .buttonBar button.del {
     background-color: transparent;
     border: 1px solid var(--accent-color);
 }
 
-.panel-right .container .button-bar button.del:hover {
+.panelRight .container .buttonBar button.del:hover {
     border: 1px solid var(--accent-hover-color);
     background-color: var(--accent-color);
     color: var(--fg-color);
 }
 
-.panel-right .container .button-bar button.cancel {
+.panelRight .container .buttonBar button.cancel {
     background-color: transparent;
     border: 1px solid var(--fg-color);
 }
 
-.panel-right .container .button-bar button.cancel:hover {
+.panelRight .container .buttonBar button.cancel:hover {
     border: 1px solid var(--bg-color);
     background-color: var(--fg-color);
     color: var(--bg-color);
 }
 
-.panel-right .container .button-bar button:disabled,
-.panel-right .container .button-bar button[disabled],
-.panel-right .container .button-bar button:disabled:hover,
-.panel-right .container .button-bar button[disabled]:hover {
+.panelRight .container .buttonBar button:disabled,
+.panelRight .container .buttonBar button[disabled],
+.panelRight .container .buttonBar button:disabled:hover,
+.panelRight .container .buttonBar button[disabled]:hover {
     border: 1px solid #999999;
     background-color: #cccccc;
     color: #666666;
 }
 
-.panel-right .field:not(last-child) {
+.panelRight .field:not(last-child) {
     margin-bottom: 1.2rem;
 }

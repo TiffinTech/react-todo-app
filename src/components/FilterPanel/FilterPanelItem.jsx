@@ -1,3 +1,4 @@
+import CSS2 from './FilterPanel.module.css';
 import { useAtom } from 'jotai';
 import {
     selectedFilterIndexAtom,
@@ -32,7 +33,7 @@ const FilterPanelItem = ({ item, index }) => {
 
     return (
         <li
-            className={`${selectedFilterIndex === index ? 'selected' : ''}`}
+            className={`${selectedFilterIndex === index ? CSS2.selected : ''}`}
             onClick={onFilterSelectionChanged}
         >
             <span>{item.svg}</span>

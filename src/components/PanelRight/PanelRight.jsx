@@ -1,4 +1,4 @@
-import './styles.css';
+import CSS from './PanelRight.module.css';
 import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import useDataManager from '../../hooks/useDataManager';
@@ -122,22 +122,22 @@ const PanelRight = () => {
     }
 
     return (
-        <div className="panel-right">
-            <div className="container">
-                <div className="close" onClick={() => setRightPanelVisible(false)}>
+        <div className={`panelRight ${CSS.panelRight}`}>
+            <div className={CSS.container}>
+                <div className={CSS.close} onClick={() => setRightPanelVisible(false)}>
                     ×
                 </div>
-                <div className="edit-area">
-                    <div className="field">
+                <div className={CSS.editArea}>
+                    <div className={CSS.field}>
                         <label>Todo</label>
                         <textarea
-                            className="ta-input"
+                            className={CSS.taInput}
                             value={taskCopy?.event || ''}
                             disabled={!selectedTask}
                             onChange={(evt) => onContentChanged(evt, 'event')}
                         ></textarea>
                     </div>
-                    <div className="field">
+                    <div className={CSS.field}>
                         <label>Due Date</label>
                         <input
                             type="date"
@@ -147,12 +147,16 @@ const PanelRight = () => {
                         />
                     </div>
                 </div>
-                <div className="button-bar">
-                    <button className="del" disabled={!selectedTask} onClick={onDeleteClicked}>
+                <div className={CSS.buttonBar}>
+                    <button
+                        className={CSS.del}
+                        disabled={!selectedTask}
+                        onClick={onDeleteClicked}
+                    >
                         Delete
                     </button>
                     <button
-                        className="cancel"
+                        className={CSS.cancel}
                         onClick={onCancelClicked}
                         disabled={!isInEditMode}
                     >

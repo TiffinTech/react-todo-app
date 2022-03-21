@@ -55,41 +55,11 @@ body.dark {
     min-height: 100vh;
 }
 
-.header {
-    position: sticky;
-    top: 0;
-    background-color: var(--bg-color);
-    border-bottom: 1px solid var(--border-header);
-    width: 100%;
-    height: var(--header-height);
-    z-index: 10;
-}
-
-.panel-left {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: var(--left-panel-width);
-    height: calc(100vh - var(--header-height) - var(--footer-height));
-
-    transition: all 0.4s ease;
-}
-
-.panel-right {
-    position: fixed;
-    top: var(--header-height);
-    right: 0;
-    width: var(--right-panel-width);
-    height: calc(100vh - var(--header-height) - var(--footer-height));
-
-    transition: all 0.4s ease;
-}
-
-.hide-left .panel-left {
+.hide-left .panelLeft {
     margin-left: calc(-1 * var(--left-panel-width));
 }
 
-.hide-right .panel-right {
+.hide-right .panelRight {
     margin-right: calc(-1 * var(--right-panel-width));
 }
 

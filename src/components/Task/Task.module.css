@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 
-.task .task-content {
+.task .taskContent {
     display: flex;
     align-items: center;
 }
@@ -46,19 +46,19 @@
     text-decoration: line-through;
 }
 
-.task-content .text {
+.taskContent .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 2.2rem;
 }
 
-.task .line-two {
+.task .lineTwo {
     font-size: small;
     height: 1rem;
     color: var(--fg-secondary-color);
 }
 
-.task .line-two.overdue {
+.task .lineTwo.overdue {
     color: var(--accent-color);
 }

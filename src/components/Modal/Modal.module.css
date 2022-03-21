@@ -59,7 +59,7 @@
     font-size: large;
 }
 
-.window .button-bar {
+.window .buttonBar {
     position: sticky;
     bottom: 0;
     display: flex;
@@ -69,7 +69,7 @@
     padding: 0.7rem 0.6rem;
 }
 
-.window .button-bar button {
+.window .buttonBar button {
     background-color: var(--bg-color);
     color: var(--fg-color);
 
@@ -81,29 +81,29 @@
     margin: 0 0.4rem;
 }
 
-.window .button-bar button:hover {
+.window .buttonBar button:hover {
     border: 1px solid var(--fg-color);
     background-color: var(--fg-color);
     color: var(--bg-color);
 }
 
-.window .button-bar button.del {
+.window .buttonBar button.del {
     background-color: transparent;
     border: 1px solid var(--accent-color);
 }
 
-.window .button-bar button.del:hover {
+.window .buttonBar button.del:hover {
     border: 1px solid var(--accent-hover-color);
     background-color: var(--accent-color);
     color: var(--fg-color);
 }
 
-.window .button-bar button.cancel {
+.window .buttonBar button.cancel {
     background-color: transparent;
     border: 1px solid var(--fg-color);
 }
 
-.window .button-bar button.cancel:hover {
+.window .buttonBar button.cancel:hover {
     border: 1px solid var(--bg-color);
     background-color: var(--fg-color);
     color: var(--bg-color);

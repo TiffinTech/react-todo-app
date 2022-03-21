@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import CSS from './TaskList.module.css';
 
 import { useAtom } from 'jotai';
 import Task from '../Task/Task';
@@ -13,7 +13,7 @@ const TaskList = () => {
     const [filteredTaskList] = useAtom(filteredTasksAtom);
 
     return (
-        <div className="task-list">
+        <div className={CSS.taskList}>
             {filteredTaskList.map((task, idx) => {
                 return <Task key={idx} task={task} />;
             })}

@@ -1,15 +1,15 @@
-.loading-indicator {
+.loadingIndicator {
     --loading-indicator-size: 1rem;
     width: var(--loading-indicator-size);
     height: var(--loading-indicator-size);
     margin: 0.4rem;
 }
 
-.loading-indicator.lds-dual-ring {
+.loadingIndicator.ldsDualRing {
     display: inline-block;
 }
 
-.loading-indicator.lds-dual-ring:after {
+.loadingIndicator.ldsDualRing:after {
     content: ' ';
     display: block;
     width: var(--loading-indicator-size);
@@ -18,9 +18,9 @@
     border-radius: 50%;
     border: 2px solid var(--fg-color);
     border-color: var(--fg-color) transparent var(--fg-color) transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
+    animation: ldsDualRing 1.2s linear infinite;
 }
-@keyframes lds-dual-ring {
+@keyframes ldsDualRing {
     0% {
         transform: rotate(0deg);
     }

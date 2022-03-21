@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './styles.css';
+import CSS from './Footer.module.css';
 
 import { useAtom } from 'jotai';
 import { taskListAtom, inEditModeAtom } from "../../atoms/atoms";
@@ -30,11 +30,11 @@ const Footer = () => {
     return (
         <footer>
             STATISTICS:
-            <span className="label">All Tasks: {countAll}</span>
-            <span className="label">Open Tasks: {countOpen}</span>
-            <span className="label">Done Tasks: {countAll - countOpen}</span>
-            <span className="label">Overdue Tasks: {countOverdue}</span>
-            <span className="editMode">{isInEditMode ? "editing" : ""}</span>
+            <span className={CSS.label}>All Tasks: {countAll}</span>
+            <span className={CSS.label}>Open Tasks: {countOpen}</span>
+            <span className={CSS.label}>Done Tasks: {countAll - countOpen}</span>
+            <span className={CSS.label}>Overdue Tasks: {countOverdue}</span>
+            <span className={CSS.editMode}>{isInEditMode ? "editing" : ""}</span>
         </footer >
     );
 };

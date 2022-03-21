@@ -1,7 +1,7 @@
-import './styles.css';
+import CSS from './PanelLeft.module.css';
 
 const PanelLeft = ({ children }) => {
-    return <div className="panel-left">{children}</div>;
+    return <div className={`panelLeft ${CSS.panelLeft}`}>{children}</div>;
 };
 
 export default PanelLeft;
