@@ -1,0 +1,30 @@
+.loadingIndicator {
+    --loading-indicator-size: 1rem;
+    width: var(--loading-indicator-size);
+    height: var(--loading-indicator-size);
+    margin: 0.4rem;
+}
+
+.loadingIndicator.ldsDualRing {
+    display: inline-block;
+}
+
+.loadingIndicator.ldsDualRing:after {
+    content: ' ';
+    display: block;
+    width: var(--loading-indicator-size);
+    height: var(--loading-indicator-size);
+    /* margin: 1rem; */
+    border-radius: 50%;
+    border: 2px solid var(--fg-color);
+    border-color: var(--fg-color) transparent var(--fg-color) transparent;
+    animation: ldsDualRing 1.2s linear infinite;
+}
+@keyframes ldsDualRing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,22 +1,122 @@
-/* BASIC THEMING */ 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
-  --accent-color: rgb(235, 28, 71); /* from one of your shirts :) */
-  --bg-color: white;
-  --fg-color: #222;
-  
-  background-color: var(--bg-color);
-  color: var(--fg-color);
+    margin: 0;
+
+    /* BASIC THEMING */
+    --header-height: 3.4rem;
+    --footer-height: 1.6rem;
+
+    --left-panel-width: 12rem;
+    --right-panel-width: 18rem;
+    --input-area-height: 3rem;
+
+    --accent-color: rgb(235, 28, 71);
+    --accent-hover-color: rgb(185, 21, 54);
+    --bg-btn-color-life: green;
+
+    --bg-color: white;
+    --fg-color: #222;
+    --fg-secondary-color: #555;
+    --bg-secondary-color: #bbb;
+    --bg-left-panel: #ddd;
+    --bg-right-panel: #eee;
+    --bg-panel-input: #eee;
+    --border-header: #ccc;
+    --border-left-panel: #ccc;
+    --border-right-panel: #ccc;
+    --border-footer: #ccc;
+    --border-modal: #eee;
+
+    background-color: var(--bg-color);
+    color: var(--fg-color);
 }
 
 body.dark {
-  --bg-color: #222;
-  --fg-color: #eee;
+    --bg-color: #222;
+    --fg-color: #eee;
+    --fg-secondary-color: #ccc;
+    --bg-secondary-color: #555;
+    --bg-left-panel: #222;
+    --bg-right-panel: #444;
+    --bg-panel-input: #333;
+    --border-header: #333;
+    --border-left-panel: #333;
+    --border-right-panel: #333;
+    --border-footer: #333;
+    --border-modal: #666;
 }
 
-.App {
-  text-align: center;
-  max-width: 960px;
-  margin: 0 auto;
+.app {
+    min-height: 100vh;
 }
 
+.hide-left .panelLeft {
+    margin-left: calc(-1 * var(--left-panel-width));
+}
+
+.hide-right .panelRight {
+    margin-right: calc(-1 * var(--right-panel-width));
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--left-panel-width);
+    margin-right: var(--right-panel-width);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+
+    transition: all 0.4s ease;
+}
+
+main .main-content {
+    padding: 1rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+main .main-input {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: var(--input-area-height);
+    background-color: var(--bg-panel-input);
+    border-top: 1px solid var(--border-footer);
+}
+
+main .main-input input {
+    flex: 2;
+    padding: 0.3rem 1rem;
+    font-size: medium;
+    margin-left: 0.6rem;
+}
+
+main .main-input button {
+    padding: 0.3rem 0.4rem;
+    font-size: medium;
+    margin-right: 0.6rem;
+}
+
+.hide-left main {
+    margin-left: 0;
+}
+
+.hide-right main {
+    margin-right: 0;
+}
+
+footer {
+    position: sticky;
+    width: 100%;
+    height: var(--footer-height);
+    bottom: 0;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-footer);
+}

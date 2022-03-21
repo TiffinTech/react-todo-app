@@ -1,0 +1,12 @@
+.panelLeft {
+    background-color: var(--bg-left-panel);
+    border-right: 1px solid var(--border-left-panel);
+
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: var(--left-panel-width);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+
+    transition: all 0.4s ease;
+}

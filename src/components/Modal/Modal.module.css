@@ -1,0 +1,110 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-secondary-color);
+    width: 24rem;
+    max-width: 80%;
+    border: 2px solid var(--border-modal);
+    border-top: none;
+
+    border-bottom-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+    z-index: 200;
+
+    transition: top 0.3s ease-in-out;
+}
+
+.modal.hidden {
+    top: -100%;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    /* background-color: white; */
+    z-index: 100;
+}
+
+.window .inner {
+    height: 100%;
+    border-bottom-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+    padding: 0.6rem;
+    margin: 1rem 0;
+}
+
+.window .title {
+    background-color: var(--accent-color);
+    font-size: large;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.6rem;
+}
+
+.window .close {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.6rem;
+    cursor: pointer;
+    font-size: large;
+}
+
+.window .buttonBar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid var(--border-right-panel);
+    padding: 0.7rem 0.6rem;
+}
+
+.window .buttonBar button {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+
+    border: 1px solid transparent;
+    padding: 0.3rem 1rem;
+    border-radius: 2px;
+    font-size: medium;
+
+    margin: 0 0.4rem;
+}
+
+.window .buttonBar button:hover {
+    border: 1px solid var(--fg-color);
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}
+
+.window .buttonBar button.del {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+}
+
+.window .buttonBar button.del:hover {
+    border: 1px solid var(--accent-hover-color);
+    background-color: var(--accent-color);
+    color: var(--fg-color);
+}
+
+.window .buttonBar button.cancel {
+    background-color: transparent;
+    border: 1px solid var(--fg-color);
+}
+
+.window .buttonBar button.cancel:hover {
+    border: 1px solid var(--bg-color);
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+}

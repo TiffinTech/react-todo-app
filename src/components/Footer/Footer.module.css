@@ -1,0 +1,34 @@
+footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: xx-small;
+
+    padding: 0.1rem 0.6rem;
+}
+
+footer .label {
+    padding: 0.1rem 0.4rem;
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    font-variant: small-caps;
+}
+
+footer .label:first-child {
+    margin-left: 2rem;
+}
+
+footer .editMode {
+    font-weight: bold;
+    font-variant: small-caps;
+    color: var(--accent-color);
+    animation: blinker 1.6s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

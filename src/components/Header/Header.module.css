@@ -1,0 +1,38 @@
+.header {
+    color: var(--accent-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-header);
+    width: 100%;
+    height: var(--header-height);
+    z-index: 10;
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+}
+
+.header .left svg {
+    stroke: var(--fg-color);
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.header .btnTheme {
+    display: flex;
+    padding: 0.2rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.header .btnTheme:hover {
+    transform: scale(0.96);
+}
